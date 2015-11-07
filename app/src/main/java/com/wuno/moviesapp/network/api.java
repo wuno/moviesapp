@@ -1,8 +1,6 @@
 package com.wuno.moviesapp.network;
 
-import com.wuno.moviesapp.model.Movie;
-
-import java.util.List;
+import com.wuno.moviesapp.model.MoviesResponse;
 
 import retrofit.Callback;
 import retrofit.http.GET;
@@ -12,7 +10,7 @@ import retrofit.http.GET;
  */
 public interface api {
 
-    @GET("/3/discover/movie?sort_by=popularity.desc&api_key=e2a804764747474747474574817b218e")
-    public void getData(Callback<List<Movie>> response);
+    @GET("/3/discover/movie?sort_by=popularity.desc&api_key=e2a8069c1e666b7545db574817b218e")
+    public void getData(Callback<MoviesResponse> response);
 
 }

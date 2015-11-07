@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.wuno.moviesapp.model.Movie;
+import com.wuno.moviesapp.model.MoviesResponse;
 import com.wuno.moviesapp.network.api;
 
 import java.util.List;
@@ -29,10 +30,10 @@ public class MainActivity extends ListActivity {
 
         api movieapi = restadapter.create(api.class);
 
-        movieapi.getData(new Callback<List<Movie>>() {
+        movieapi.getData(new Callback<MoviesResponse>() {
             @Override
-            public void success(List<Movie> movies, Response response) {
-                movieList = movies;
+            public void success(MoviesResponse moviesresponse, Response response) {
+                movieList = moviesresponse.getResults();
 
                 adapter adapt = new adapter(getApplicationContext(),R.layout.item_file,movieList);
                 //ListView listView = (ListView) findViewById(R.id.list);
