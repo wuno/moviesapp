@@ -33,6 +33,7 @@ public class MainActivity extends ListActivity {
             @Override
             public void success(List<Movie> movies, Response response) {
                 movieList = movies;
+
                 adapter adapt = new adapter(getApplicationContext(),R.layout.item_file,movieList);
                 //ListView listView = (ListView) findViewById(R.id.list);
                 setListAdapter(adapt);
@@ -40,7 +41,7 @@ public class MainActivity extends ListActivity {
 
             @Override
             public void failure(RetrofitError error) {
-                Toast.makeText(getApplicationContext(),"Failed",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -52,6 +53,7 @@ public class MainActivity extends ListActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
         return true;
     }
 

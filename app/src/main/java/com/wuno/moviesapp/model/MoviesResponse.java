@@ -1,8 +1,20 @@
 package com.wuno.moviesapp.model;
 
+import java.util.List;
 
-public class Movie
-{
+/**
+ * Created by wuno on 11/6/15.
+ */
+public class MoviesResponse {
+
+    private int page;
+
+    private List<Movie> results;
+
+    private int total_pages;
+
+    private int total_results;
+
     private String vote_average;
 
     private String backdrop_path;
@@ -30,6 +42,46 @@ public class Movie
     private String video;
 
     private String popularity;
+
+    public int getPage ()
+    {
+        return page;
+    }
+
+    public void setPage (int page)
+    {
+        this.page = page;
+    }
+
+    public List<Movie> getResults ()
+    {
+        return results;
+    }
+
+    public void setResults (List<Movie> results)
+    {
+        this.results = results;
+    }
+
+    public int getTotal_pages ()
+    {
+        return total_pages;
+    }
+
+    public void setTotal_pages (int total_pages) {
+        this.total_pages = total_pages;
+
+    }
+
+    public int getTotal_results ()
+    {
+        return total_results;
+    }
+
+    public void setTotal_results (int total_results) {
+        this.total_results = total_results;
+
+    }
 
     public String getVote_average ()
     {
@@ -171,9 +223,4 @@ public class Movie
         this.popularity = popularity;
     }
 
-    @Override
-    public String toString()
-    {
-        return "Movie [vote_average = "+vote_average+", backdrop_path = "+backdrop_path+", adult = "+adult+", id = "+id+", title = "+title+", original_language = "+original_language+", overview = "+overview+", genre_ids = "+genre_ids+", original_title = "+original_title+", release_date = "+release_date+", vote_count = "+vote_count+", poster_path = "+poster_path+", video = "+video+", popularity = "+popularity+"]";
-    }
 }

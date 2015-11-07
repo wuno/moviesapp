@@ -12,7 +12,7 @@ import retrofit.http.GET;
  */
 public interface api {
 
-    @GET("/3/discover/movie?sort_by=popularity.desc&api_key=e2a8069c1e18c3b7545db574817b218e")
+    @GET("/3/discover/movie?sort_by=popularity.desc&api_key=e2a804764747474747474574817b218e")
     public void getData(Callback<List<Movie>> response);
 
 }

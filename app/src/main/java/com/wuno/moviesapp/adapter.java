@@ -24,7 +24,7 @@ import java.util.List;
 
 public class adapter extends ArrayAdapter<Movie> {
 
-    String url="http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=e2a8069c1e18c3b7545db574817b218e";
+    String url = "http://image.tmdb.org/t/p/w185";
     private Context context;
     private List<Movie> movieList;
     public adapter(Context context, int resource, List<Movie> objects) {
@@ -41,7 +41,8 @@ public class adapter extends ArrayAdapter<Movie> {
         TextView tv = (TextView) view.findViewById(R.id.name);
         tv.setText(movie.getTitle());
         ImageView img = (ImageView) view.findViewById(R.id.img);
-        Picasso.with(getContext()).load(url+movie.getPoster_path()).resize(100,100).into(img);
+        Picasso.with(getContext()).load(url+movie.getPoster_path()).into(img);
         return view;
     }
 }
+
